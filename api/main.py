@@ -1,6 +1,6 @@
 import os
 import requests
-from flask import Flask, request, jsonify
+from flask import Flask, json, request, jsonify
 from dotenv import load_dotenv
 from flask_cors import CORS
 from mongo_client import mongo_client
@@ -16,7 +16,7 @@ DEBUG = bool(os.environ.get("DEBUG", True))
 
 if not UNSPLASH_KEY:
     raise EnvironmentError(
-        "Please create .env.local file and insert the UNSPLASH_KEY there"
+        "Please create .env.local file and insert there UNSPLASH_KEY"
     )
 
 app = Flask(__name__)
